@@ -14,3 +14,19 @@
 1. [package.json](./package.json) のパッケージ名を変更
 2. [.env.example](./packages/db/.env.example) と [.env.local.example](./apps/web/.env.local.example) を複製して `.example` なしバージョンを作成し、変数をセットする
 3. Supabase のローカルコンテナ名を設定: [config.toml](./tooling/supabase/config.toml)
+
+## 開発
+
+```sh
+pnpm dev
+```
+
+## アップデート
+
+```sh
+# pnpm のアップデート
+corepack use pnpm
+
+# next.js のアップデート
+pnpm up --recursive typescript@latest
+```
