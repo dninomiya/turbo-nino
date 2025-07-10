@@ -6,6 +6,7 @@
   "scripts": {
     "start": "supabase start",
     "stop": "supabase stop",
+    "status": "supabase status",
     "db:push": "supabase db push",
     "db:pull": "supabase db pull",
     "db:reset": "supabase db reset",
