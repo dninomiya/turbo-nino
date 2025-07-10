@@ -4,6 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "supabase start",
+    "stop": "supabase stop",
+    "db:push": "supabase db push",
+    "db:pull": "supabase db pull",
+    "db:reset": "supabase db reset",
+    "db:studio": "supabase db studio",
+    "db:types": "supabase gen types typescript --local > ./src/database.types.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
