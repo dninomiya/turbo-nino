@@ -8,14 +8,16 @@
   },
   "exports": {
     "./client": "./client.ts",
-    "./route": "./route.ts"
+    "./route": "./route.ts",
+    "./session": "./session.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.13.1",
   "dependencies": {
+    "@workspace/db": "workspace:*",
     "better-auth": "^1.2.12",
-    "@workspace/db": "workspace:*"
+    "next": "^15.3.5"
   }
 }

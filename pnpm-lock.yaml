@@ -32,6 +32,9 @@ importers:
       '@workspace/ui':
         specifier: workspace:*
         version: link:../../packages/ui
+      better-auth:
+        specifier: ^1.2.12
+        version: 1.2.12
       lucide-react:
         specifier: ^0.475.0
         version: 0.475.0(react@19.0.0)
@@ -78,6 +81,9 @@ importers:
       better-auth:
         specifier: ^1.2.12
         version: 1.2.12
+      next:
+        specifier: ^15.3.5
+        version: 15.3.5(@babel/core@7.28.0)(@playwright/test@1.53.2)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
 
   packages/db:
     dependencies:
