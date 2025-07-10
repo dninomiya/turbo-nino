@@ -79,8 +79,8 @@ export function updateSearchParams(
 
   // 新しいパラメータを追加・更新
   Object.entries(params).forEach(([key, value]) => {
-    if (value === null || value === undefined) {
-      // null または undefined の場合は削除
+    if (value === null || value === undefined || value === "") {
+      // null、undefined、または空文字列の場合は削除
       newParams.delete(key);
     } else {
       // 値を文字列に変換して設定

@@ -10,10 +10,12 @@
     "lint": {
       "dependsOn": ["^lint"]
     },
-    "test": {},
-    "test:watch": {
+    "test": {
       "cache": false,
       "persistent": true
+    },
+    "test:watch": {
+      "dependsOn": ["^test:watch"]
     },
     "e2e": {
       "passThroughEnv": ["PLAYWRIGHT_*"],
