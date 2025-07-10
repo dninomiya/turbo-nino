@@ -15,6 +15,10 @@
       "cache": false,
       "persistent": true
     },
+    "e2e": {
+      "passThroughEnv": ["PLAYWRIGHT_*"],
+      "dependsOn": ["^build"]
+    },
     "dev": {
       "cache": false,
       "persistent": true
