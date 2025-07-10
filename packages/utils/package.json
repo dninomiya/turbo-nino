@@ -11,9 +11,11 @@
   "license": "ISC",
   "packageManager": "pnpm@10.13.1",
   "dependencies": {
+    "date-fns": "^4.1.0",
     "nanoid": "^5.1.5"
   },
   "exports": {
-    "./generate-id": "./generate-id.ts"
+    "./generate-id": "./generate-id.ts",
+    "./format-date": "./format-date.ts"
   }
 }
