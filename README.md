@@ -1,31 +1,16 @@
-# shadcn/ui monorepo template
+# README
 
-This template is for creating a monorepo with shadcn/ui.
+## 概要
 
-## Usage
+主要なツールの環境構築を行なった Turborepo テンプレートです。すぐに開発に着手できます。
 
-```bash
-pnpm dlx shadcn@latest init
-```
+- Next.js, shadcn/ui（全コンポーネント）
+- データベース: [Supabase](https://supabase.com/docs/guides/local-development?queryGroups=package-manager&package-manager=pnpm)
+- 認証: [better-auth](https://www.better-auth.com/docs/introduction)
+- ORM: [Drizzle](https://orm.drizzle.team/docs/get-started/supabase-new)
 
-## Adding components
+## 初期設定
 
-To add components to your app, run the following command at the root of your `web` app:
-
-```bash
-pnpm dlx shadcn@latest add button -c apps/web
-```
-
-This will place the ui components in the `packages/ui/src/components` directory.
-
-## Tailwind
-
-Your `tailwind.config.ts` and `globals.css` are already set up to use the components from the `ui` package.
-
-## Using components
-
-To use the components in your app, import them from the `ui` package.
-
-```tsx
-import { Button } from "@workspace/ui/components/button"
-```
+1. [package.json](./package.json) のパッケージ名を変更
+2. [.env.example](./packages/db/.env.example) と [.env.local.example](./apps/web/.env.local.example) を複製して `.example` なしバージョンを作成し、変数をセットする
+3. Supabase のローカルコンテナ名を設定: [config.toml](./tooling/supabase/config.toml)
