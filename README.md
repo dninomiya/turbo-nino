@@ -9,6 +9,12 @@
 - 認証: [better-auth](https://www.better-auth.com/docs/introduction)
 - ORM: [Drizzle](https://orm.drizzle.team/docs/get-started/supabase-new)
 
+## インストール
+
+```sh
+pnpx create-turbo@latest --example https://github.com/dninomiya/nino-template -m pnpm
+```
+
 ## 初期設定
 
 1. [package.json](./package.json) のパッケージ名を変更
