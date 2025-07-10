@@ -24,6 +24,10 @@
 - UI
   - 画像アップロード用のシンプルクロッパー
 
+### 定数ファイル
+
+[utils/constants.ts](/Users/nino/Developer/nino-template/packages/utils/constants.ts)を使うことでアプリ名などの定数を一元管理できます。
+
 ## インストール
 
 ```sh

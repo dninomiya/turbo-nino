@@ -334,6 +334,9 @@ importers:
       nanoid:
         specifier: ^5.1.5
         version: 5.1.5
+      next:
+        specifier: ^15.3.5
+        version: 15.3.5(@babel/core@7.28.0)(@playwright/test@1.53.2)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
 
   tooling/playwright-web:
     dependencies:
