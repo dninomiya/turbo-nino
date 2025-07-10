@@ -106,7 +106,11 @@ importers:
         specifier: ^8.24.1
         version: 8.24.1(eslint@9.20.1(jiti@2.4.2))(typescript@5.7.3)
 
-  packages/playwright-utilities: {}
+  packages/playwright-utilities:
+    dependencies:
+      '@playwright/test':
+        specifier: '*'
+        version: 1.53.2
 
   packages/supabase: {}
 
