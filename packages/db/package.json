@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "db:push": "drizzle-kit push",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:gm": "drizzle-kit generate && drizzle-kit migrate",
     "db:studio": "drizzle-kit studio",
+    "db:seed": "tsx ./seed.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "exports": {
@@ -22,6 +24,7 @@
     "postgres": "^3.4.7"
   },
   "devDependencies": {
-    "drizzle-kit": "^0.31.4"
+    "drizzle-kit": "^0.31.4",
+    "tsx": "^4.20.3"
   }
 }
