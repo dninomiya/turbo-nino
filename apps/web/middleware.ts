@@ -7,7 +7,9 @@ export async function middleware(request: NextRequest) {
   // これは改竄可能なCookieを使用した簡易的なリダイレクトです。
   // 各ページ/ルートで必ず認証チェックを行ってください
   if (!sessionCookie) {
-    return NextResponse.redirect(new URL("/", request.url));
+    const redirectUrl = new URL("/", request.url);
+    redirectUrl.searchParams.set("redirect", request.nextUrl.pathname);
+    return NextResponse.redirect(redirectUrl);
   }
 
   return NextResponse.next();
