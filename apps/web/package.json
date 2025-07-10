@@ -9,9 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "typecheck": "tsc --noEmit",
-    "test": "jest",
-    "test:watch": "jest --watch"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@workspace/auth": "workspace:*",
@@ -29,7 +27,6 @@
     "@types/react-dom": "^19",
     "@workspace/eslint-config": "workspace:^",
     "@workspace/typescript-config": "workspace:*",
-    "jest": "^30.0.4",
     "typescript": "^5.7.3"
   }
 }
