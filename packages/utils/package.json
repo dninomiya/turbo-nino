@@ -13,13 +13,23 @@
   "dependencies": {
     "date-fns": "^4.1.0",
     "nanoid": "^5.1.5",
-    "next": "^15.3.5"
+    "next": "^15.3.5",
+    "react-dom": "^19.0.0"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0"
   },
   "exports": {
     "./generate-id": "./generate-id.ts",
     "./format-date": "./format-date.ts",
     "./get-base-url": "./get-base-url.ts",
     "./merge-search-params": "./merge-search-params.ts",
+    "./search-params": "./search-params.ts",
+    "./use-update-search-params": "./use-update-search-params.ts",
     "./constants": "./constants.ts"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4"
   }
 }
