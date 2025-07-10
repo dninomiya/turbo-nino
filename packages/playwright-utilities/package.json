@@ -1,6 +1,6 @@
 {
   "name": "@repo/playwright-utilities",
   "peerDependencies": {
-    "playwright": "workspace:*"
+    "@playwright/test": "*"
   }
 }
