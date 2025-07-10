@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "generate": "pnpx @better-auth/cli@latest generate --output ../db/schemas/auth.ts -y"
   },
   "exports": {
-    "./client": "./client.ts",
+    "./auth": "./auth.ts",
     "./route": "./route.ts",
     "./session": "./session.ts"
   },
@@ -17,6 +17,7 @@
   "packageManager": "pnpm@10.13.1",
   "dependencies": {
     "@workspace/db": "workspace:*",
+    "@workspace/utils": "workspace:*",
     "better-auth": "^1.2.12",
     "next": "^15.3.5"
   }

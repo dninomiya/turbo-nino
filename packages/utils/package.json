@@ -1,0 +1,19 @@
+{
+  "name": "@workspace/utils",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.13.1",
+  "dependencies": {
+    "nanoid": "^5.1.5"
+  },
+  "exports": {
+    "./generate-id": "./generate-id.ts"
+  }
+}
