@@ -14,6 +14,7 @@ import {
   DrizzleORMLight,
   ShadcnUiLight,
   BetterAuthLight,
+  SWRLight,
 } from "@ridemountainpig/svgl-react";
 import { Copy, Mail } from "lucide-react";
 
@@ -228,7 +229,7 @@ export default function Home() {
               className="bg-orange-50 p-6 rounded-xl border border-orange-200 hover:border-orange-300 transition-colors block"
             >
               <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 bg-white border shadow-sm">
-                <Svgl name="swr" className="w-8 h-8" />
+                <SWRLight name="swr" className="w-8 h-8" />
               </div>
               <h3 className="font-bold text-gray-900 mb-2">SWR</h3>
               <p className="text-gray-600 text-sm">
