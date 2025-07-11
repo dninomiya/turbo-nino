@@ -51,6 +51,12 @@ importers:
         specifier: ^19.0.0
         version: 19.0.0(react@19.0.0)
     devDependencies:
+      '@testing-library/dom':
+        specifier: ^10.4.0
+        version: 10.4.0
+      '@testing-library/react':
+        specifier: ^16.3.0
+        version: 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.0.4(@types/react@19.0.10))(@types/react@19.0.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@types/node':
         specifier: ^20
         version: 20.17.19
@@ -60,15 +66,27 @@ importers:
       '@types/react-dom':
         specifier: ^19
         version: 19.0.4(@types/react@19.0.10)
+      '@vitejs/plugin-react':
+        specifier: ^4.6.0
+        version: 4.6.0(vite@7.0.4(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.20.3))
       '@workspace/eslint-config':
         specifier: workspace:^
         version: link:../../packages/eslint-config
       '@workspace/typescript-config':
         specifier: workspace:*
         version: link:../../packages/typescript-config
+      jsdom:
+        specifier: ^26.1.0
+        version: 26.1.0
       typescript:
         specifier: ^5.7.3
         version: 5.7.3
+      vite-tsconfig-paths:
+        specifier: ^5.1.4
+        version: 5.1.4(typescript@5.7.3)(vite@7.0.4(@types/node@20.17.19)(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.20.3))
+      vitest:
+        specifier: ^3.2.4
+        version: 3.2.4(@types/node@20.17.19)(jiti@2.4.2)(jsdom@26.1.0)(lightningcss@1.29.1)(tsx@4.20.3)
 
   packages/auth:
     dependencies:
@@ -373,7 +391,7 @@ importers:
         version: 5.1.4(typescript@5.8.3)(vite@7.0.4(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.20.3))
       vitest:
         specifier: ^3.2.4
-        version: 3.2.4(jiti@2.4.2)(jsdom@26.1.0)(lightningcss@1.29.1)(tsx@4.20.3)
+        version: 3.2.4(@types/node@20.17.19)(jiti@2.4.2)(jsdom@26.1.0)(lightningcss@1.29.1)(tsx@4.20.3)
 
   tooling/playwright-web:
     dependencies:
@@ -4940,7 +4958,7 @@ snapshots:
       '@babel/traverse': 7.28.0
       '@babel/types': 7.28.0
       convert-source-map: 2.0.0
-      debug: 4.4.0
+      debug: 4.4.1
       gensync: 1.0.0-beta.2
       json5: 2.2.3
       semver: 6.3.1
@@ -5265,7 +5283,7 @@ snapshots:
   '@eslint/config-array@0.19.2':
     dependencies:
       '@eslint/object-schema': 2.1.6
-      debug: 4.4.0
+      debug: 4.4.1
       minimatch: 3.1.2
     transitivePeerDependencies:
       - supports-color
@@ -5281,7 +5299,7 @@ snapshots:
   '@eslint/eslintrc@3.2.0':
     dependencies:
       ajv: 6.12.6
-      debug: 4.4.0
+      debug: 4.4.1
       espree: 10.3.0
       globals: 14.0.0
       ignore: 5.3.2
@@ -6598,7 +6616,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/typescript-estree': 8.24.1(typescript@5.7.3)
       '@typescript-eslint/utils': 8.24.1(eslint@9.20.1(jiti@2.4.2))(typescript@5.7.3)
-      debug: 4.4.0
+      debug: 4.4.1
       eslint: 9.20.1(jiti@2.4.2)
       ts-api-utils: 2.0.1(typescript@5.7.3)
       typescript: 5.7.3
@@ -6611,7 +6629,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 8.24.1
       '@typescript-eslint/visitor-keys': 8.24.1
-      debug: 4.4.0
+      debug: 4.4.1
       fast-glob: 3.3.3
       is-glob: 4.0.3
       minimatch: 9.0.5
@@ -6645,7 +6663,7 @@ snapshots:
       '@rolldown/pluginutils': 1.0.0-beta.19
       '@types/babel__core': 7.20.5
       react-refresh: 0.17.0
-      vite: 7.0.4(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.20.3)
+      vite: 7.0.4(@types/node@20.17.19)(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.20.3)
     transitivePeerDependencies:
       - supports-color
 
@@ -6663,7 +6681,7 @@ snapshots:
       estree-walker: 3.0.3
       magic-string: 0.30.17
     optionalDependencies:
-      vite: 7.0.4(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.20.3)
+      vite: 7.0.4(@types/node@20.17.19)(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.20.3)
 
   '@vitest/pretty-format@3.2.4':
     dependencies:
@@ -7382,7 +7400,7 @@ snapshots:
 
   esbuild-register@3.6.0(esbuild@0.25.6):
     dependencies:
-      debug: 4.4.0
+      debug: 4.4.1
       esbuild: 0.25.6
     transitivePeerDependencies:
       - supports-color
@@ -7563,7 +7581,7 @@ snapshots:
 
   estree-walker@3.0.3:
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.8
 
   esutils@2.0.3: {}
 
@@ -7824,14 +7842,14 @@ snapshots:
   http-proxy-agent@7.0.2:
     dependencies:
       agent-base: 7.1.3
-      debug: 4.4.0
+      debug: 4.4.1
     transitivePeerDependencies:
       - supports-color
 
   https-proxy-agent@7.0.6:
     dependencies:
       agent-base: 7.1.3
-      debug: 4.4.0
+      debug: 4.4.1
     transitivePeerDependencies:
       - supports-color
 
@@ -8568,7 +8586,7 @@ snapshots:
   proxy-agent@6.5.0:
     dependencies:
       agent-base: 7.1.3
-      debug: 4.4.0
+      debug: 4.4.1
       http-proxy-agent: 7.0.2
       https-proxy-agent: 7.0.6
       lru-cache: 7.18.3
@@ -9197,6 +9215,10 @@ snapshots:
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
 
+  tsconfck@3.1.6(typescript@5.7.3):
+    optionalDependencies:
+      typescript: 5.7.3
+
   tsconfck@3.1.6(typescript@5.8.3):
     optionalDependencies:
       typescript: 5.8.3
@@ -9382,13 +9404,13 @@ snapshots:
       d3-time: 3.1.0
       d3-timer: 3.0.1
 
-  vite-node@3.2.4(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.20.3):
+  vite-node@3.2.4(@types/node@20.17.19)(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.20.3):
     dependencies:
       cac: 6.7.14
       debug: 4.4.1
       es-module-lexer: 1.7.0
       pathe: 2.0.3
-      vite: 7.0.4(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.20.3)
+      vite: 7.0.4(@types/node@20.17.19)(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.20.3)
     transitivePeerDependencies:
       - '@types/node'
       - jiti
@@ -9403,18 +9425,29 @@ snapshots:
       - tsx
       - yaml
 
+  vite-tsconfig-paths@5.1.4(typescript@5.7.3)(vite@7.0.4(@types/node@20.17.19)(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.20.3)):
+    dependencies:
+      debug: 4.4.1
+      globrex: 0.1.2
+      tsconfck: 3.1.6(typescript@5.7.3)
+    optionalDependencies:
+      vite: 7.0.4(@types/node@20.17.19)(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.20.3)
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
+
   vite-tsconfig-paths@5.1.4(typescript@5.8.3)(vite@7.0.4(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.20.3)):
     dependencies:
       debug: 4.4.1
       globrex: 0.1.2
       tsconfck: 3.1.6(typescript@5.8.3)
     optionalDependencies:
-      vite: 7.0.4(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.20.3)
+      vite: 7.0.4(@types/node@20.17.19)(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.20.3)
     transitivePeerDependencies:
       - supports-color
       - typescript
 
-  vite@7.0.4(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.20.3):
+  vite@7.0.4(@types/node@20.17.19)(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.20.3):
     dependencies:
       esbuild: 0.25.6
       fdir: 6.4.6(picomatch@4.0.2)
@@ -9423,12 +9456,13 @@ snapshots:
       rollup: 4.44.2
       tinyglobby: 0.2.14
     optionalDependencies:
+      '@types/node': 20.17.19
       fsevents: 2.3.3
       jiti: 2.4.2
       lightningcss: 1.29.1
       tsx: 4.20.3
 
-  vitest@3.2.4(jiti@2.4.2)(jsdom@26.1.0)(lightningcss@1.29.1)(tsx@4.20.3):
+  vitest@3.2.4(@types/node@20.17.19)(jiti@2.4.2)(jsdom@26.1.0)(lightningcss@1.29.1)(tsx@4.20.3):
     dependencies:
       '@types/chai': 5.2.2
       '@vitest/expect': 3.2.4
@@ -9450,10 +9484,11 @@ snapshots:
       tinyglobby: 0.2.14
       tinypool: 1.1.1
       tinyrainbow: 2.0.0
-      vite: 7.0.4(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.20.3)
-      vite-node: 3.2.4(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.20.3)
+      vite: 7.0.4(@types/node@20.17.19)(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.20.3)
+      vite-node: 3.2.4(@types/node@20.17.19)(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.20.3)
       why-is-node-running: 2.3.0
     optionalDependencies:
+      '@types/node': 20.17.19
       jsdom: 26.1.0
     transitivePeerDependencies:
       - jiti
