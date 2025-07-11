@@ -1,9 +1,27 @@
 "use client";
 
 import { useState } from "react";
+import {
+  Nextjs,
+  Supabase,
+  Vitest,
+  Playwright,
+  Sentry,
+  Stripe,
+  Svgl,
+  CursorLight,
+  ResendLight,
+  DrizzleORMLight,
+  ShadcnUiLight,
+  BetterAuthLight,
+} from "@ridemountainpig/svgl-react";
+import { Copy, Mail } from "lucide-react";
 
 export default function Home() {
   const [copied, setCopied] = useState(false);
+  const [commandCopied, setCommandCopied] = useState<{
+    [key: string]: boolean;
+  }>({});
 
   const installCommand =
     "pnpx create-turbo@latest --example https://github.com/dninomiya/nino-template -m pnpm";
@@ -18,6 +36,18 @@ export default function Home() {
     }
   };
 
+  const copyCommand = async (command: string, id: string) => {
+    try {
+      await navigator.clipboard.writeText(command);
+      setCommandCopied((prev) => ({ ...prev, [id]: true }));
+      setTimeout(() => {
+        setCommandCopied((prev) => ({ ...prev, [id]: false }));
+      }, 2000);
+    } catch (err) {
+      console.error("Failed to copy command: ", err);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       {/* Header */}
@@ -25,7 +55,13 @@ export default function Home() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <div className="h-8 w-8 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600"></div>
+              <div className="h-8 w-8 rounded-lg overflow-hidden bg-gradient-to-r from-blue-600 to-purple-600">
+                <img
+                  src="https://pbs.twimg.com/profile_images/1759180513980698624/gc3G9skp_400x400.jpg"
+                  className="size-full"
+                  alt=""
+                />
+              </div>
               <h1 className="text-xl font-bold text-gray-900">Turbonino</h1>
             </div>
             <nav className="hidden md:flex items-center space-x-6">
@@ -74,18 +110,23 @@ export default function Home() {
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
               主要なツールの環境構築を行ったTurborepoテンプレートです。
               <br />
-              Next.js、Supabase、better-auth、Drizzleが完全に統合済み。
+              Next.js、Supabase、Better Auth、Drizzleが完全に統合済み。
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <div className="bg-gray-900 text-white px-8 py-4 rounded-lg font-mono text-sm">
-                {installCommand}
+            <div className="flex justify-center">
+              <div className="relative bg-gray-900 text-green-400 px-8 py-4 rounded-lg font-mono text-sm max-w-2xl w-full">
+                <code className="block pr-12">{installCommand}</code>
+                <button
+                  onClick={copyToClipboard}
+                  className="absolute top-3 right-3 p-2 hover:bg-gray-700 rounded transition-colors"
+                  title="コマンドをコピー"
+                >
+                  {copied ? (
+                    <span className="text-green-400 text-sm">✓</span>
+                  ) : (
+                    <Copy className="w-5 h-5 text-gray-400" />
+                  )}
+                </button>
               </div>
-              <button
-                onClick={copyToClipboard}
-                className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-semibold relative"
-              >
-                {copied ? "✅ コピーしました！" : "今すぐ始める"}
-              </button>
             </div>
           </div>
         </div>
@@ -111,8 +152,8 @@ export default function Home() {
               rel="noopener noreferrer"
               className="bg-gray-50 p-6 rounded-xl border hover:border-gray-300 transition-colors block"
             >
-              <div className="w-12 h-12 bg-black rounded-lg flex items-center justify-center mb-4">
-                <span className="text-white font-bold">N</span>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 bg-white border shadow-sm">
+                <Nextjs className="w-8 h-8" />
               </div>
               <h3 className="font-bold text-gray-900 mb-2">Next.js</h3>
               <p className="text-gray-600 text-sm">App Router</p>
@@ -125,8 +166,11 @@ export default function Home() {
               rel="noopener noreferrer"
               className="bg-slate-50 p-6 rounded-xl border border-slate-200 hover:border-slate-300 transition-colors block"
             >
-              <div className="w-12 h-12 bg-slate-600 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-white font-bold">UI</span>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 bg-white border shadow-sm">
+                <ShadcnUiLight
+                  name="shadcnui"
+                  className="w-8 h-8 text-zinc-800"
+                />
               </div>
               <h3 className="font-bold text-gray-900 mb-2">shadcn/ui</h3>
               <p className="text-gray-600 text-sm">全コンポーネント導入済み</p>
@@ -139,8 +183,8 @@ export default function Home() {
               rel="noopener noreferrer"
               className="bg-green-50 p-6 rounded-xl border border-green-200 hover:border-green-300 transition-colors block"
             >
-              <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-white font-bold">S</span>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 bg-white border shadow-sm">
+                <Supabase className="w-8 h-8" />
               </div>
               <h3 className="font-bold text-gray-900 mb-2">Supabase</h3>
               <p className="text-gray-600 text-sm">
@@ -155,10 +199,10 @@ export default function Home() {
               rel="noopener noreferrer"
               className="bg-blue-50 p-6 rounded-xl border border-blue-200 hover:border-blue-300 transition-colors block"
             >
-              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-white font-bold">🔐</span>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 bg-white border shadow-sm">
+                <BetterAuthLight name="betterauth" className="w-8 h-8" />
               </div>
-              <h3 className="font-bold text-gray-900 mb-2">better-auth</h3>
+              <h3 className="font-bold text-gray-900 mb-2">Better Auth</h3>
               <p className="text-gray-600 text-sm">モダンな認証システム</p>
             </a>
 
@@ -169,8 +213,8 @@ export default function Home() {
               rel="noopener noreferrer"
               className="bg-purple-50 p-6 rounded-xl border border-purple-200 hover:border-purple-300 transition-colors block"
             >
-              <div className="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-white font-bold">🐉</span>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 bg-white border shadow-sm">
+                <DrizzleORMLight name="drizzle" className="w-8 h-8" />
               </div>
               <h3 className="font-bold text-gray-900 mb-2">Drizzle ORM</h3>
               <p className="text-gray-600 text-sm">TypeScript-first ORM</p>
@@ -183,8 +227,8 @@ export default function Home() {
               rel="noopener noreferrer"
               className="bg-orange-50 p-6 rounded-xl border border-orange-200 hover:border-orange-300 transition-colors block"
             >
-              <div className="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-white font-bold">⚡</span>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 bg-white border shadow-sm">
+                <Svgl name="swr" className="w-8 h-8" />
               </div>
               <h3 className="font-bold text-gray-900 mb-2">SWR</h3>
               <p className="text-gray-600 text-sm">
@@ -199,8 +243,8 @@ export default function Home() {
               rel="noopener noreferrer"
               className="bg-indigo-50 p-6 rounded-xl border border-indigo-200 hover:border-indigo-300 transition-colors block"
             >
-              <div className="w-12 h-12 bg-indigo-600 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-white font-bold">⚙️</span>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 bg-white border shadow-sm">
+                <CursorLight name="cursor" className="w-8 h-8" />
               </div>
               <h3 className="font-bold text-gray-900 mb-2">Cursor Rules</h3>
               <p className="text-gray-600 text-sm">AI開発支援設定済み</p>
@@ -213,8 +257,8 @@ export default function Home() {
               rel="noopener noreferrer"
               className="bg-red-50 p-6 rounded-xl border border-red-200 hover:border-red-300 transition-colors block"
             >
-              <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-white font-bold">📧</span>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 bg-white border shadow-sm">
+                <Mail className="text-zinc-800" />
               </div>
               <h3 className="font-bold text-gray-900 mb-2">React Email</h3>
               <p className="text-gray-600 text-sm">メールテンプレート構築</p>
@@ -227,8 +271,8 @@ export default function Home() {
               rel="noopener noreferrer"
               className="bg-teal-50 p-6 rounded-xl border border-teal-200 hover:border-teal-300 transition-colors block"
             >
-              <div className="w-12 h-12 bg-teal-600 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-white font-bold">✉️</span>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 bg-white border shadow-sm">
+                <ResendLight name="resend" className="w-8 h-8" />
               </div>
               <h3 className="font-bold text-gray-900 mb-2">Resend</h3>
               <p className="text-gray-600 text-sm">メール送信サービス</p>
@@ -241,8 +285,8 @@ export default function Home() {
               rel="noopener noreferrer"
               className="bg-lime-50 p-6 rounded-xl border border-lime-200 hover:border-lime-300 transition-colors block"
             >
-              <div className="w-12 h-12 bg-lime-600 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-white font-bold">⚡</span>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 bg-white border shadow-sm">
+                <Vitest className="w-8 h-8" />
               </div>
               <h3 className="font-bold text-gray-900 mb-2">Vitest</h3>
               <p className="text-gray-600 text-sm">高速単体テスト</p>
@@ -255,8 +299,8 @@ export default function Home() {
               rel="noopener noreferrer"
               className="bg-cyan-50 p-6 rounded-xl border border-cyan-200 hover:border-cyan-300 transition-colors block"
             >
-              <div className="w-12 h-12 bg-cyan-600 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-white font-bold">🎭</span>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 bg-white border shadow-sm">
+                <Playwright className="w-8 h-8" />
               </div>
               <h3 className="font-bold text-gray-900 mb-2">Playwright</h3>
               <p className="text-gray-600 text-sm">E2Eテスト自動化</p>
@@ -269,8 +313,8 @@ export default function Home() {
               rel="noopener noreferrer"
               className="bg-amber-50 p-6 rounded-xl border border-amber-200 hover:border-amber-300 transition-colors block"
             >
-              <div className="w-12 h-12 bg-amber-600 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-white font-bold">🔍</span>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 bg-white border shadow-sm">
+                <Sentry className="w-8 h-8" />
               </div>
               <h3 className="font-bold text-gray-900 mb-2">Sentry</h3>
               <p className="text-gray-600 text-sm">エラートラッキング</p>
@@ -283,8 +327,8 @@ export default function Home() {
               rel="noopener noreferrer"
               className="bg-violet-50 p-6 rounded-xl border border-violet-200 hover:border-violet-300 transition-colors block"
             >
-              <div className="w-12 h-12 bg-violet-600 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-white font-bold">💳</span>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 bg-white border shadow-sm">
+                <Stripe className="w-8 h-8" />
               </div>
               <h3 className="font-bold text-gray-900 mb-2">Stripe</h3>
               <p className="text-gray-600 text-sm">決済・課金システム</p>
@@ -372,8 +416,19 @@ export default function Home() {
                   <h3 className="font-bold text-gray-900 mb-2">
                     プロジェクト作成
                   </h3>
-                  <div className="bg-gray-100 p-4 rounded-lg font-mono text-sm">
-                    {installCommand}
+                  <div className="relative bg-gray-900 text-green-400 p-4 rounded-lg font-mono text-sm">
+                    <code className="block pr-10">{installCommand}</code>
+                    <button
+                      onClick={() => copyCommand(installCommand, "install")}
+                      className="absolute top-3 right-3 p-1 hover:bg-gray-700 rounded transition-colors"
+                      title="コマンドをコピー"
+                    >
+                      {commandCopied.install ? (
+                        <span className="text-green-400 text-xs">✓</span>
+                      ) : (
+                        <Copy className="w-4 h-4 text-gray-400" />
+                      )}
+                    </button>
                   </div>
                 </div>
               </div>
@@ -396,8 +451,19 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="font-bold text-gray-900 mb-2">開発開始</h3>
-                  <div className="bg-gray-100 p-4 rounded-lg font-mono text-sm">
-                    pnpm dev
+                  <div className="relative bg-gray-900 text-green-400 p-4 rounded-lg font-mono text-sm">
+                    <code className="block pr-10">pnpm dev</code>
+                    <button
+                      onClick={() => copyCommand("pnpm dev", "dev")}
+                      className="absolute top-3 right-3 p-1 hover:bg-gray-700 rounded transition-colors"
+                      title="コマンドをコピー"
+                    >
+                      {commandCopied.dev ? (
+                        <span className="text-green-400 text-xs">✓</span>
+                      ) : (
+                        <Copy className="w-4 h-4 text-gray-400" />
+                      )}
+                    </button>
                   </div>
                 </div>
               </div>
@@ -424,22 +490,55 @@ export default function Home() {
               <h3 className="font-bold text-gray-900 mb-3">
                 Next.js開発サーバー
               </h3>
-              <div className="bg-gray-100 p-3 rounded-lg font-mono text-sm">
-                pnpm dev
+              <div className="relative bg-gray-900 text-green-400 p-3 rounded-lg font-mono text-sm">
+                <code className="block pr-10">pnpm dev</code>
+                <button
+                  onClick={() => copyCommand("pnpm dev", "dev-cmd")}
+                  className="absolute top-2 right-2 p-1 hover:bg-gray-700 rounded transition-colors"
+                  title="コマンドをコピー"
+                >
+                  {commandCopied["dev-cmd"] ? (
+                    <span className="text-green-400 text-xs">✓</span>
+                  ) : (
+                    <Copy className="w-3 h-3 text-gray-400" />
+                  )}
+                </button>
               </div>
             </div>
 
             <div className="bg-white p-6 rounded-xl border shadow-sm">
               <h3 className="font-bold text-gray-900 mb-3">Supabase起動</h3>
-              <div className="bg-gray-100 p-3 rounded-lg font-mono text-sm">
-                pnpm start
+              <div className="relative bg-gray-900 text-green-400 p-3 rounded-lg font-mono text-sm">
+                <code className="block pr-10">pnpm start</code>
+                <button
+                  onClick={() => copyCommand("pnpm start", "start-cmd")}
+                  className="absolute top-2 right-2 p-1 hover:bg-gray-700 rounded transition-colors"
+                  title="コマンドをコピー"
+                >
+                  {commandCopied["start-cmd"] ? (
+                    <span className="text-green-400 text-xs">✓</span>
+                  ) : (
+                    <Copy className="w-3 h-3 text-gray-400" />
+                  )}
+                </button>
               </div>
             </div>
 
             <div className="bg-white p-6 rounded-xl border shadow-sm">
               <h3 className="font-bold text-gray-900 mb-3">データベース更新</h3>
-              <div className="bg-gray-100 p-3 rounded-lg font-mono text-sm">
-                pnpm gm
+              <div className="relative bg-gray-900 text-green-400 p-3 rounded-lg font-mono text-sm">
+                <code className="block pr-10">pnpm gm</code>
+                <button
+                  onClick={() => copyCommand("pnpm gm", "gm-cmd")}
+                  className="absolute top-2 right-2 p-1 hover:bg-gray-700 rounded transition-colors"
+                  title="コマンドをコピー"
+                >
+                  {commandCopied["gm-cmd"] ? (
+                    <span className="text-green-400 text-xs">✓</span>
+                  ) : (
+                    <Copy className="w-3 h-3 text-gray-400" />
+                  )}
+                </button>
               </div>
             </div>
           </div>
