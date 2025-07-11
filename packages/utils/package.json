@@ -26,7 +26,8 @@
     "./get-base-url": "./get-base-url.ts",
     "./search-params": "./search-params.ts",
     "./use-update-search-params": "./use-update-search-params.ts",
-    "./constants": "./constants.ts"
+    "./constants": "./constants.ts",
+    "./fetcher": "./fetcher.ts"
   },
   "devDependencies": {
     "@testing-library/dom": "^10.4.0",

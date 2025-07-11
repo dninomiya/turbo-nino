@@ -44,6 +44,9 @@ importers:
       better-auth:
         specifier: ^1.2.12
         version: 1.2.12
+      drizzle-orm:
+        specifier: ^0.44.2
+        version: 0.44.2(kysely@0.28.2)(postgres@3.4.7)
       lucide-react:
         specifier: ^0.475.0
         version: 0.475.0(react@19.0.0)
