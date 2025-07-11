@@ -24,7 +24,6 @@
     "./generate-id": "./generate-id.ts",
     "./format-date": "./format-date.ts",
     "./get-base-url": "./get-base-url.ts",
-    "./merge-search-params": "./merge-search-params.ts",
     "./search-params": "./search-params.ts",
     "./use-update-search-params": "./use-update-search-params.ts",
     "./constants": "./constants.ts"
