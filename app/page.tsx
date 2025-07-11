@@ -1,22 +1,21 @@
 "use client";
 
-import { useState } from "react";
 import {
-  Nextjs,
-  Supabase,
-  Vitest,
-  Playwright,
-  Sentry,
-  Stripe,
-  Svgl,
-  CursorLight,
-  ResendLight,
-  DrizzleORMLight,
-  ShadcnUiLight,
   BetterAuthLight,
+  CursorLight,
+  DrizzleORMLight,
+  Nextjs,
+  Playwright,
+  ResendLight,
+  Sentry,
+  ShadcnUiLight,
+  Stripe,
+  Supabase,
   SWRLight,
+  Vitest,
 } from "@ridemountainpig/svgl-react";
 import { Copy, Mail } from "lucide-react";
+import { useState } from "react";
 
 export default function Home() {
   const [copied, setCopied] = useState(false);
