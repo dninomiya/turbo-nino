@@ -26,12 +26,12 @@
 
 ### 定数ファイル
 
-[utils/constants.ts](/Users/nino/Developer/nino-template/packages/utils/constants.ts)を使うことでアプリ名などの定数を一元管理できます。
+[utils/constants.ts](./packages/utils/constants.ts)を使うことでアプリ名などの定数を一元管理できます。
 
 ## インストール
 
 ```sh
-pnpx create-turbo@latest --example https://github.com/dninomiya/nino-template -m pnpm
+pnpx create-turbo@latest --example https://github.com/dninomiya/turbonino -m pnpm
 ```
 
 ## 初期設定
