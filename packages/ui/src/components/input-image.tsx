@@ -5,6 +5,7 @@ import {
   Dialog,
   DialogClose,
   DialogContent,
+  DialogDescription,
   DialogTitle,
 } from "@workspace/ui/components/dialog";
 import { Slider } from "@workspace/ui/components/slider";
@@ -125,6 +126,9 @@ export function InputImage({
 
       <Dialog open={open} onOpenChange={(status) => setOpen(status)}>
         <DialogTitle className="sr-only">イメージを切り抜く</DialogTitle>
+        <DialogDescription className="sr-only">
+          イメージを切り抜く
+        </DialogDescription>
         <DialogContent className="max-w-md">
           <div
             className="border relative overflow-hidden rounded-lg"
