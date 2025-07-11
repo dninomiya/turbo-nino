@@ -11,6 +11,7 @@
   "license": "ISC",
   "packageManager": "pnpm@10.13.1",
   "devDependencies": {
+    "@react-email/preview-server": "4.1.1",
     "@types/react": "^19.1.8",
     "react-email": "4.1.1"
   },
