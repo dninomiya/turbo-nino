@@ -25,7 +25,7 @@ export default function Home() {
   }>({});
 
   const installCommand =
-    "pnpx create-turbo@latest --example https://github.com/dninomiya/nino-template -m pnpm";
+    "pnpx create-turbo@latest --example https://github.com/dninomiya/turbonino -m pnpm";
 
   const copyToClipboard = async () => {
     try {
@@ -85,7 +85,7 @@ export default function Home() {
                 開発
               </a>
               <a
-                href="https://github.com/dninomiya/nino-template"
+                href="https://github.com/dninomiya/turbonino"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors"
@@ -556,7 +556,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://github.com/dninomiya/nino-template"
+                href="https://github.com/dninomiya/turbonino"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white text-gray-900 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors font-semibold text-center"
@@ -564,7 +564,7 @@ export default function Home() {
                 GitHubで詳細を見る
               </a>
               <a
-                href="https://github.com/dninomiya/nino-template#readme"
+                href="https://github.com/dninomiya/turbonino#readme"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="border border-gray-600 text-white px-8 py-4 rounded-lg hover:bg-gray-800 transition-colors text-center"
