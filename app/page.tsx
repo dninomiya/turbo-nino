@@ -205,6 +205,90 @@ export default function Home() {
               <h3 className="font-bold text-gray-900 mb-2">Cursor Rules</h3>
               <p className="text-gray-600 text-sm">AI開発支援設定済み</p>
             </a>
+
+            {/* React Email */}
+            <a
+              href="https://react.email"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-red-50 p-6 rounded-xl border border-red-200 hover:border-red-300 transition-colors block"
+            >
+              <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
+                <span className="text-white font-bold">📧</span>
+              </div>
+              <h3 className="font-bold text-gray-900 mb-2">React Email</h3>
+              <p className="text-gray-600 text-sm">メールテンプレート構築</p>
+            </a>
+
+            {/* Resend */}
+            <a
+              href="https://resend.com/docs"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-teal-50 p-6 rounded-xl border border-teal-200 hover:border-teal-300 transition-colors block"
+            >
+              <div className="w-12 h-12 bg-teal-600 rounded-lg flex items-center justify-center mb-4">
+                <span className="text-white font-bold">✉️</span>
+              </div>
+              <h3 className="font-bold text-gray-900 mb-2">Resend</h3>
+              <p className="text-gray-600 text-sm">メール送信サービス</p>
+            </a>
+
+            {/* Vitest */}
+            <a
+              href="https://vitest.dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-lime-50 p-6 rounded-xl border border-lime-200 hover:border-lime-300 transition-colors block"
+            >
+              <div className="w-12 h-12 bg-lime-600 rounded-lg flex items-center justify-center mb-4">
+                <span className="text-white font-bold">⚡</span>
+              </div>
+              <h3 className="font-bold text-gray-900 mb-2">Vitest</h3>
+              <p className="text-gray-600 text-sm">高速単体テスト</p>
+            </a>
+
+            {/* Playwright */}
+            <a
+              href="https://playwright.dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-cyan-50 p-6 rounded-xl border border-cyan-200 hover:border-cyan-300 transition-colors block"
+            >
+              <div className="w-12 h-12 bg-cyan-600 rounded-lg flex items-center justify-center mb-4">
+                <span className="text-white font-bold">🎭</span>
+              </div>
+              <h3 className="font-bold text-gray-900 mb-2">Playwright</h3>
+              <p className="text-gray-600 text-sm">E2Eテスト自動化</p>
+            </a>
+
+            {/* Sentry */}
+            <a
+              href="https://sentry.io/welcome"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-amber-50 p-6 rounded-xl border border-amber-200 hover:border-amber-300 transition-colors block"
+            >
+              <div className="w-12 h-12 bg-amber-600 rounded-lg flex items-center justify-center mb-4">
+                <span className="text-white font-bold">🔍</span>
+              </div>
+              <h3 className="font-bold text-gray-900 mb-2">Sentry</h3>
+              <p className="text-gray-600 text-sm">エラートラッキング</p>
+            </a>
+
+            {/* Stripe */}
+            <a
+              href="https://stripe.com/docs"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-violet-50 p-6 rounded-xl border border-violet-200 hover:border-violet-300 transition-colors block"
+            >
+              <div className="w-12 h-12 bg-violet-600 rounded-lg flex items-center justify-center mb-4">
+                <span className="text-white font-bold">💳</span>
+              </div>
+              <h3 className="font-bold text-gray-900 mb-2">Stripe</h3>
+              <p className="text-gray-600 text-sm">決済・課金システム</p>
+            </a>
           </div>
         </div>
       </section>
