@@ -23,6 +23,9 @@
   },
   "pnpm": {
     "onlyBuiltDependencies": [
+      "core-js-pure",
+      "esbuild",
+      "sharp",
       "supabase"
     ]
   }
