@@ -1,7 +1,7 @@
 name: Deploy Next.js site to Pages
 
 on:
-  # Runs on pushes targeting the main branch
+  # Runs on pushes targeting the docs branch
   push:
     branches:
       - docs
