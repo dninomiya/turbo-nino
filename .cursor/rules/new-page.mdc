@@ -1,0 +1,8 @@
+---
+description: 画面(page.tsx)を作成、編集する時のルール
+alwaysApply: false
+---
+
+- 画面(page.tsx)は必ずサーバーコンポーネントであるべきなので、"use client" は使わない
+- "use client" が必要な機能は別コンポーネントに分離する
+- metadata をエクスポートし、画面のタイトルを明示する

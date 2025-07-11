@@ -1,0 +1,6 @@
+---
+description: Drizzleスキーマを作成、編集する際のルール
+alwaysApply: false
+---
+
+- idは packages/utils の `generateId` を使って定義する

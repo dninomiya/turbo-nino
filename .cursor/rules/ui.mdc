@@ -1,0 +1,7 @@
+---
+description: UIに関するルール
+alwaysApply: false
+---
+
+- UI は可能な限り packages/ui にある shadcn/ui のパーツを使用する
+- shadcn/ui 自体のカスタマイズはせず、使用する際も極力装飾は加えない

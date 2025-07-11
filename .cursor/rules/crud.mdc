@@ -7,6 +7,14 @@ alwaysApply: false
 
 packagesの drizzle を使う。
 
+```ts
+import { db } from "@workspace/db";
+
+const updateTask = () => {
+  db.update(...)
+}
+```
+
 ## データ取得時
 
 1. /app/api/ に ルートハンドラー(route.ts) を作成
@@ -14,11 +22,21 @@ packagesの drizzle を使う。
 3. /swr/ にデータ取得用の swr フックを作成し、作成したルートをfetchする
 4. 関連コンポーネントからSWRフックを使用する
 
+```ts
+import { fetcher } from "@workspace/utils/fetcher";
+
+export const useTasks = () => {
+  const { data, isLoading, error } = useSWR("/api/tasks", fetcher);
+
+  return { tasks: data, isLoading, error };
+};
+```
+
 ## データ更新時
 
 1. /actions/ に サーバーアクションを作成("use server" をファイル先頭に追加)
-2. swr フックの mutate を使ってデータ更新とUI更新を一緒に行う
-3. 即反映が必要な場合、swr の mutate で optimistic オプションを使用する
+2. サーバーアクションでは適切に権限検証を行う
+3. swr フックの mutate & optimistic を使ってデータ更新とUI更新を一緒に行う
 
 以下は optimistic を使用する例
 
