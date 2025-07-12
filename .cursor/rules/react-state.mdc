@@ -1,0 +1,27 @@
+---
+description: グローバルな状態管理
+alwaysApply: false
+---
+
+グローバルな状態管理はフェッチなしの SWR フックを作成して使用する。
+
+```tsx
+import useSWRImmutable from "swr/immutable";
+
+export const usePetName = (初期値: string) => {
+  const { data: petName, mutate: setPetName } = useSWRImmutable(
+    "petName",
+    null,
+    {
+      fallbackData: 初期値,
+    }
+  );
+
+  return {
+    petName,
+    setPetName,
+  };
+};
+```
+
+Context/Provider は冗長なので使用しない
