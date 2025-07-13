@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "generate": "pnpx @better-auth/cli@latest generate --output ../db/schemas/auth.ts -y"
+    "generate": "pnpx @better-auth/cli@latest generate --output ../database/schemas/auth.ts -y"
   },
   "exports": {
     "./auth": "./auth.ts",
