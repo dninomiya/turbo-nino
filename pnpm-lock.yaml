@@ -29,9 +29,9 @@ importers:
       '@workspace/auth':
         specifier: workspace:*
         version: link:../../packages/auth
-      '@workspace/db':
+      '@workspace/database':
         specifier: workspace:*
-        version: link:../../packages/db
+        version: link:../../packages/database
       '@workspace/supabase-utilities':
         specifier: workspace:*
         version: link:../../packages/supabase-utilities
@@ -108,9 +108,9 @@ importers:
 
   packages/auth:
     dependencies:
-      '@workspace/db':
+      '@workspace/database':
         specifier: workspace:*
-        version: link:../db
+        version: link:../database
       '@workspace/utils':
         specifier: workspace:*
         version: link:../utils
@@ -121,7 +121,7 @@ importers:
         specifier: ^15.3.5
         version: 15.3.5(@babel/core@7.26.10)(@playwright/test@1.53.2)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
 
-  packages/db:
+  packages/database:
     dependencies:
       drizzle-orm:
         specifier: ^0.44.2

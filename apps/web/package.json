@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@workspace/auth": "workspace:*",
-    "@workspace/db": "workspace:*",
+    "@workspace/database": "workspace:*",
     "@workspace/supabase-utilities": "workspace:*",
     "@workspace/ui": "workspace:*",
     "@workspace/utils": "workspace:*",

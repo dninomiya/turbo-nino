@@ -1,5 +1,5 @@
 {
-  "name": "@workspace/db",
+  "name": "@workspace/database",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,7 +12,8 @@
     "db:seed": "tsx ./seed.ts"
   },
   "exports": {
-    ".": "./db.ts"
+    ".": "./db.ts",
+    "./schemas": "./schemas/index.ts"
   },
   "keywords": [],
   "author": "",

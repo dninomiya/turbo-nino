@@ -16,7 +16,7 @@
   "license": "ISC",
   "packageManager": "pnpm@10.13.1",
   "dependencies": {
-    "@workspace/db": "workspace:*",
+    "@workspace/database": "workspace:*",
     "@workspace/utils": "workspace:*",
     "better-auth": "^1.2.12",
     "next": "^15.3.5"
